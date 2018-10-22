@@ -292,7 +292,9 @@ end
 
 # MAIN
 
-process_file_name(".gv")
+@source_file = File.new("#{ARGV[0]}", "r") # variable with file in it.
+@target_arr = File.split(@source_file).insert(1, "/") # target_arr is ["filepath" "/" "filename.ext"]
+@target_arr[2].sub!(".gv") # target_arr is now ["filepath" "/" "filename"]
 
 original_lines = []
 IO.readlines(@source_file).each { |line| original_lines << line}
@@ -309,4 +311,6 @@ write_to_temp_file(formatted_lines) && verbose("Written to temp file: #{TEMP_FIL
 
 convert_GV_to_PDF(@target_arr[0..1].join, @target_arr[2]) && verbose("converted #{@target_arr[0..1].join}#{@target_arr[2]}")
 
-trash_intermediary_files(SVG_TEMP_FILES) && verbose("trashed SVG temp files")
+SVG_TEMP_FILES.each { |ext|
+  Dir.glob("#{@target_arr[0]}/*#{ext}").each { |file| `trash '#{file}'` }
+}
