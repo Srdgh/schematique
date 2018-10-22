@@ -29,6 +29,8 @@ Word-wrapping is also performed on lines in tables. A basic variable (`TABLE_LIN
 - for edges: `node1 -> node2 {{default}}`
   - becomes: `node1 -> node2 [color = blue, style = solid]`
 
+These presets can be customised in the `flowchart_keywords_list.rb` file.
+
 ## Tables in Nodes
 
 It is hard to have a syntax for tables that is both powerful (allowing for both colspan and rowspan) and markdown-like in its user-friendliness. This is an attempt to strike a balance between the two.
