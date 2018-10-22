@@ -8,6 +8,12 @@ In order of importance/general interest:
 - simplify syntax (trade some flexibility for readability), **especially for tables**.
 - enable a powerful "format presets" system. (e.g. tag a node with `{objection}` for a red border, tag it with `{support}` for a green border, etc.)
 
+# Requirements
+
+Schematique requires:
+- GraphViz (for all the real work)
+- Inkscape (for SVG to PDF conversion)
+
 # The Syntax
 
 ## Customisable presets
