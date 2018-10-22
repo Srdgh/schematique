@@ -10,3 +10,6 @@ In order of importance/general interest:
 
 # The Syntax
 
+- for nodes: `node_name [label = "Lots of nice text." {default}]`
+- for edges: `node1 -> node2 {{default}}`
+
