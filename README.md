@@ -16,7 +16,7 @@ Schematique requires:
 
 # Word-wrapping
 
-This is controlled through the variable `LINE_LENGTH`, which is currently set at `40` characters. The parser adds a `<BR/>` after every `40` (or whatever you want) characters. You can put in your own breaks manually and it work to complement them nicely (i.e. it starts counting again if it encounters a break already in the text).
+This is controlled through the variable `LINE_LENGTH`, which is currently set at `40` characters. The parser adds a `<BR/>` after every `40` (or whatever you want) characters. You can put in your own breaks manually and it works to complement them nicely (i.e. it starts counting again if it encounters a break already in the text).
 
 Word-wrapping is also performed on lines in tables. A basic variable (`TABLE_LINE_BASE`) is used, but multiplied according to the number of columns the cell spans.
 
