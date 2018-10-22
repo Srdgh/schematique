@@ -5,7 +5,7 @@ Graphviz preprocessor for simpler flowcharting
 
 In order of importance/general interest:
 - automate word-wrap
-- simplify syntax (trade some flexibility for readability), **especially for tables**.
+- simplify syntax (for some definitions of "simplify"), **especially for tables**.
 - enable a powerful "format presets" system. (e.g. tag a node with `{objection}` for a red border, tag it with `{support}` for a green border, etc.)
 
 # Requirements
