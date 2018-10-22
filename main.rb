@@ -23,6 +23,7 @@ TODO: get the border thing right. (especially work out what's going wrong with d
 # Usage: ./philosophy_flowcharter.rb ~/file.gv
 
 require "./flowchart_keyword_list"
+require "./diacritic_correction"
 require # TODO: fill this in
 
 # CONSTANTS
