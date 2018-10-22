@@ -1,4 +1,4 @@
-# schematique
+# Schematique
 Graphviz preprocessor for simpler flowcharting
 
 # Aims
