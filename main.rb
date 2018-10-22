@@ -278,6 +278,18 @@ def correct_diacritics(formatted_lines)
   }
 end
 
+def convert_GV_to_SVG(filepath, filename) # note: this Excludes extension
+  `dot -Tsvg #{TEMP_FILE} -o #{filepath}#{filename}.svg` # change this. make TEMP_FILE a variable.
+end
+
+def convert_SVG_to_PDF(filepath, filename) # note: this Excludes extension
+  `inkscape -f #{filepath}#{filename}.svg -A #{filepath}#{filename}.pdf --without-gui`
+end
+      
+def convert_GV_to_PDF(filepath, filename) # note: this Excludes extension
+  convert_GV_to_SVG(filepath, filename) && convert_SVG_to_PDF(filepath, filename) # Two separate conversion methods because dot doesn't do italics if you convert straight to pdf
+end
+
 # MAIN
 
 process_file_name(".gv")
@@ -296,7 +308,5 @@ correct_diacritics(formatted_lines) && verbose("Diacritic-correction done!!")
 write_to_temp_file(formatted_lines) && verbose("Written to temp file: #{TEMP_FILE}")
 
 convert_GV_to_PDF(@target_arr[0..1].join, @target_arr[2]) && verbose("converted #{@target_arr[0..1].join}#{@target_arr[2]}")
-
-@one_drive && move_files_back_to_original_directory && verbose("Done the OneDrive thing") # delete when freed from OneDrive
 
 trash_intermediary_files(SVG_TEMP_FILES) && verbose("trashed SVG temp files")
