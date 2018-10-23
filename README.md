@@ -44,7 +44,7 @@ It is hard to have a syntax for tables that is both powerful (allowing for both 
 
 The syntax permits colspan:
 
-- cells are opened by `+` followed either by one `-` or by a number of pipe symbols (`|`). 
+- cells are opened by `+` followed either by hyphens `-` or pipe symbols (`|`). 
     - `+-` opens a cell spanning one column
     - `+|||` opens a cell spanning three columns
     - cells are closed with the mirror-image of their opening: e.g. `-+` or `|||+`
@@ -57,9 +57,9 @@ Three_things
 +==
   +||| BORDER="0">A List of Three Things|||+
 ==++==
-  +- COLOR="darkgreen" PORT="first_thing">First Thing-+
-  +- COLOR="orange" PORT="second_thing">Second Thing-+
-  +- COLOR="red" PORT="third_thing">Third Thing-+
+  +->First Thing-+
+  +->Second Thing-+
+  +->Third Thing-+
 ==+
 </TABLE>
 ~~~
